@@ -1,0 +1,22 @@
+name: Python Unit Test on PR
+
+on:
+  pull_request:
+
+jobs:
+  tests:
+    name: Python Unit Test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+    
+    - name: Unit Test
+      run: |
+        python -m unittest discover
