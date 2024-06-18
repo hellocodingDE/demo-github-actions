@@ -9,4 +9,8 @@ def sum(values : list) -> int:
     result = 0
     for value in values:
         result += value
+
+        # some logic to fail the test
+        result += 1
+
     return result
